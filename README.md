@@ -1,4 +1,27 @@
 # Semantic Segmentation
+
+### Introduction
+In this project, we build a Fully Convolutional Network (FCN) to label pixels on set of images, where we need to identify the road.
+
+### Architecture
+We use a Fully Convolutional Network, specifically the FCN-8, developed at Berkeley. A FCN consist in an encoder, in this case VGG16, which extracts the features from the image, then the decoder upsamples this features, getting as output an image of the same size as the input. For the upsampling we use transposed convolutional layers.
+
+To improve the performance we use skip layers, meaning that additionally to the final output of the encoder, we use the information of layers 3 and 4 of VGG.
+
+### Hyperparameters
+
+After some trial and error, the default learning rate of 0.001 seemed to work well for the Adam Optimizer. For keep_prob I used 0.5, I set batch_size to 6 and trained for 50 epochs. More epochs lead to worse results due to overfitting.
+
+### Results
+
+With the above settings, I achieved decent results identifying the road, although the network had problems whith heavy shades, shuch us when entering a tunnel. To improve this I added some augmention for contrast and brightness on the training dataset.
+
+The helper functions provided were suited for two classes: road and noroad. On the other hand, the KITTI dataset includes three classes: main road. secondary road and no road, I modified the helper functions to acommodate the three classes. The net works worse on secondary roads, but it's still able to identify some of them.
+
+Below you can find some examples of the final results.
+
+
+## Original README
 ### Introduction
 In this project, you'll label the pixels of a road in images using a Fully Convolutional Network (FCN).
 

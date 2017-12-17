@@ -10,16 +10,38 @@ To improve the performance we use skip layers, meaning that additionally to the 
 
 ### Hyperparameters
 
-After some trial and error, the default learning rate of 0.001 seemed to work well for the Adam Optimizer. For keep_prob I used 0.5, I set batch_size to 6 and trained for 50 epochs. More epochs lead to worse results due to overfitting.
+After some trial and error, a learning rate of 0.0008 seemed to work well for the Adam Optimizer. For keep_prob I used 0.5, I set batch_size to 6 and trained for 50 epochs. More epochs lead to worse results due to overfitting.
 
 ### Results
 
-With the above settings, I achieved decent results identifying the road, although the network had problems whith heavy shades, shuch us when entering a tunnel. To improve this I added some augmention for contrast and brightness on the training dataset.
+With the above settings, I achieved decent results identifying the road, although the network had problems with heavy shades, such us when entering a tunnel. To improve this I added some augmentaion for contrast and brightness on the training dataset.
 
-The helper functions provided were suited for two classes: road and noroad. On the other hand, the KITTI dataset includes three classes: main road. secondary road and no road, I modified the helper functions to acommodate the three classes. The net works worse on secondary roads, but it's still able to identify some of them.
+Without augmentation:
+
+![alt text](img/um_000093_no_augmentation.png)
+
+With augmentation:
+
+![alt text](img/um_000093_with_augmentation.png)
+
+The helper functions provided were suited for two classes: road and no road. On the other hand, the KITTI dataset includes three classes: main road, secondary road and no road, I modified the helper functions to accommodate the three classes. The net works worse on secondary roads, but it's still able to identify some of them.
 
 Below you can find some examples of the final results.
 
+Good examples:
+
+![alt text](img/umm_000008.png)
+![alt text](img/umm_000090.png)
+![alt text](img/um_000042.png)
+![alt text](img/um_000017.png)
+![alt text](img/um_000003.png)
+
+Not so good examples:
+
+![alt text](img/umm_000021.png)
+![alt text](img/um_000077.png)
+
+Overall, the performance is good, although on some images it still has some problems with shades and mixes both types of roads.
 
 ## Original README
 ### Introduction

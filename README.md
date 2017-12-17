@@ -31,14 +31,19 @@ Below you can find some examples of the final results.
 Good examples:
 
 ![alt text](img/umm_000008.png)
+
 ![alt text](img/umm_000090.png)
+
 ![alt text](img/um_000042.png)
+
 ![alt text](img/um_000017.png)
+
 ![alt text](img/um_000003.png)
 
 Not so good examples:
 
 ![alt text](img/umm_000021.png)
+
 ![alt text](img/um_000077.png)
 
 Overall, the performance is good, although on some images it still has some problems with shades and mixes both types of roads.
